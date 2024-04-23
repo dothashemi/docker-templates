@@ -1,0 +1,8 @@
+services:
+  laravel:
+    container_name: laravel
+    image: bitnami/laravel:latest
+    volumes:
+      - ./<source-path>/:/usr/src/laravel
+    working_dir: /usr/src/laravel
+    command: bash -c "composer update && php artisan serve --host=0.0.0.0 --port=8000"
